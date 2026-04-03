@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Link from 'next/link';
-import { AlertCircle, ShieldAlert } from 'lucide-react';
-import styles from './layout.module.css';
+import { AuthProvider } from '../lib/auth';
+import Navbar from '../components/Navbar';
 
 export const metadata: Metadata = {
   title: 'DevXtreme | Pothole Management',
-  description: 'Citizen pothole reporting and admin management platform',
+  description: 'AI-powered real-time pothole reporting and traveler alerting system.',
 };
 
 export default function RootLayout({
@@ -16,27 +15,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <nav className={`glass ${styles.navbar}`}>
-          <div className={`container ${styles.navContent}`}>
-            <Link href="/" className={styles.brand}>
-              <AlertCircle className={styles.brandIcon} />
-              <span>DevXtreme</span>
-            </Link>
-            <div className={styles.navLinks}>
-              <Link href="/report" className={styles.navLink}>
-                Citizen Report
-              </Link>
-              <Link href="/admin" className={styles.navLink}>
-                <ShieldAlert size={18} />
-                Admin Dashboard
-              </Link>
-            </div>
-          </div>
-        </nav>
-        <main className={styles.mainContent}>
-          {children}
-        </main>
+      <body className="antialiased">
+        <AuthProvider>
+          <div className="bg-glow" />
+          <Navbar />
+          <main className="pt-24 pb-12">
+            {children}
+          </main>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -8,6 +8,7 @@ import dotenv from 'dotenv';
 import issueRoutes from './routes/issueRoutes.js';
 import cronRoutes from './routes/cronRoutes.js';
 import inferRoutes from './routes/inferRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 import { getNearbyPotholes } from './services/proximityService.js';
 
 dotenv.config();
@@ -27,6 +28,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.use('/auth', authRoutes);
 app.use('/issues', issueRoutes);
 app.use('/cron', cronRoutes);
 app.use('/infer', inferRoutes);
