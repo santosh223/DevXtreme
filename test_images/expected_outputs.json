@@ -1,0 +1,22 @@
+[
+  {
+    "id": "sample_1_minor_pothole",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Pothole_on_a_road.jpg/800px-Pothole_on_a_road.jpg",
+    "expected_output": {
+      "confidence": 0.85,
+      "bbox": "[150, 200, 50, 40]",
+      "severity": "Medium"
+    },
+    "description": "A minor pothole. The bounding box area should be small."
+  },
+  {
+    "id": "sample_2_crater",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Potholes_in_a_dirt_road.jpg/800px-Potholes_in_a_dirt_road.jpg",
+    "expected_output": {
+      "confidence": 0.96,
+      "bbox": "[100, 100, 300, 250]",
+      "severity": "High"
+    },
+    "description": "A massive cluster. High confidence and large area should trigger High severity."
+  }
+]
