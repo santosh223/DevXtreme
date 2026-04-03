@@ -45,3 +45,57 @@ Avg closure time (mock if needed)
 Polish UI
 Hour 7–8
 Practice demo + backup recorded video
+
+
+Member 1 — Frontend Lead (Citizen + Admin UI)
+Owns:
+
+Citizen report form (photo upload + GPS)
+Admin dashboard (table + filters + status chips)
+Map view with issue pins (Mapbox)
+KPI cards (Open, Overdue, Fixed)
+Deliverables:
+
+/report page
+/admin page
+/map component
+clean demo-ready UI
+Member 2 — Backend + Database Lead
+Owns:
+
+FastAPI endpoints
+Postgres schema + migrations
+Issue lifecycle logic (Open → Assigned → In Progress → Fixed)
+SLA due-time + overdue flag logic
+Deliverables:
+
+Working REST APIs
+DB tables wired
+status update + assignment APIs
+cron/endpoint for overdue update
+Member 3 — AI/ML + Inference Lead
+Owns:
+
+YOLO/Roboflow pothole detection integration
+detection output parser (bbox/confidence)
+severity scoring service
+fallback mock model (if inference fails)
+Deliverables:
+
+/infer pipeline
+confidence + bbox stored
+severity label (Low/Medium/High)
+sample test images with expected output
+Member 4 — Ops/Workflow + Pitch Lead
+Owns:
+
+SLA escalation logic + rules
+demo data seeding (15–20 reports)
+storyboard + pitch deck + speaking flow
+final demo orchestration + backup video
+Deliverables:
+
+escalation matrix in app/slide
+seeded realistic dataset
+6-slide pitch deck
+final 90-sec demo script
